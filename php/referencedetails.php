@@ -1,4 +1,22 @@
 <?php
+$id=$_GET['id'];
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "maw";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+$sql = "SELECT p.id as caseno,d.hospital,p.age,p.name,p.gender,p.mother_tongue,
+p.education,p.father_name,p.mother_name,p.contactno,p.temp_address,p.permanent_address
+from patients p,doctors d,users u
+where p.docid=d.id && p.status='pending' && u.id=d.users_id && p.id= ".$id;
+$followingdata = $conn->query($sql);
+$result = $followingdata->fetch_array(MYSQLI_ASSOC);
 
 ?>
 <html lang="en">
@@ -165,22 +183,21 @@
 										 <div class="container">
 
 											 <div class="col-sm-6">
-												Case no:122<br>
-												Name of Hospital:<br>
-												Name:<br>
-												Age:<br>
-												Gender:<br>
-												Mother Tounge:<br>
-												Education:<br>
+												<b>Case no:</b><?php echo $result["caseno"] ?><br>
+												<b>Name of Hospital: </br><?php echo  $result["hospital"] ?><br>
+												<b>Name:</b><?php echo  $result["name"] ?><br>
+												<b>Age: </b><?php echo  $result["age"] ?><br>
+												<b>Gender: </b><?php  echo $result["gender"] ?><br>
+												<b>Mother Tounge: </b><?php  echo $result["mother_tongue"] ?><br>
+												<b>Education: </b><?php echo  $result["education"] ?><br>
 											 
 											 </div>
 											 <div class="col-sm-6">
-											 Father:<br>
-											 Mother:<br>
-											 Guardian:<br>
-											 Contact No:<br>
-											 Address:<br>
-											 No of siblings:<br>
+											<b> Father:</b> <?php  echo $result["father_name"] ?><br>
+											 <b>Mother: </b><?php  echo $result["mother_name"] ?><br>
+											 <b>Contact No:</b> <?php  echo $result["contactno"] ?><br>
+											<b> Temp Address: </b><?php  echo $result["temp_address"] ?><br>
+										    <b> Permanent Address: </b><?php echo  $result["permanent_address"] ?><br>
 											 </div>
 	 
 	 
@@ -188,7 +205,7 @@
 	 
 	 
 	 
-	 </div>
+										</div>
 	 	
 									</div>
 									
