@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">MAW</string>
+
+
+    <!--textview style-->
+    <string name="text">@style/TextAppearance.AppCompat.Medium</string>
+
+
+
+
+        <string-array name="cities">
+            <item>Mumbai</item>
+            <item>Pune</item>
+            <item>Nashik</item>
+            <item>Nagpur</item>
+        </string-array>
+
+
+
+
+    <!--Account-->
+
+        <string-array name="account">
+            <item>Doctor</item>
+            <item>Wish granting volunteer</item>
+            <item>Wish organizing volunteer</item>
+        </string-array>
+
+
+</resources>
