@@ -5,18 +5,20 @@ session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
- $id = mysqli_real_escape_string($db,$_POST['username']);
+$id = $_SESSION['id'];
 
+$sql = "SELECT patients.id as id,patients_name as name,wish.status as status FROM wish inner join patients 
+WHERE wish.patient_id = patients.id and wish.doc_id='$id'";
+$result = mysqli_query($db,$sql);
+$data=array();
 
-
-$sql = "SELECT * FROM wish inner join patients WHERE patient_id = patients.id  and isAssigned=0 and wish.id='$id'";
-$result=mysql_query($sql);
-while($row=mysql_fetch_assoc($result))
+while($row=mysql_fetch_array($result))
 {
-
-
+array_push($data,array('id'=>$row['id'],'name'=>$row['name'],'status'=>$row['status']));
+      
 }
-
+echo json_encode(array('data'=>$data));
+      
 
 }
 ?>
