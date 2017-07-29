@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_addperson.png",
+        "source": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\src\\main\\res\\drawable-hdpi\\ic_action_addperson.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_donor.png",
+        "source": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\src\\main\\res\\drawable-hdpi\\ic_action_donor.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_add.png",
+        "source": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\src\\main\\res\\drawable-hdpi\\ic_action_add.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_vol1.png",
+        "source": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\src\\main\\res\\drawable-hdpi\\ic_action_vol1.png"
+    },
+    {
+        "merged": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_vol2.png",
+        "source": "C:\\xampp\\htdocs\\team-17\\FinalMyApplication\\app\\src\\main\\res\\drawable-hdpi\\ic_action_vol2.png"
+    }
+]

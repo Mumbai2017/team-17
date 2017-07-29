@@ -9,14 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD:FinalMyApplication/app/src/main/AndroidManifest.xml
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".DoctorActivity">
+=======
         <activity android:name=".Login">
+>>>>>>> f29f46800cc7bacd25cfdf876df342378672d78e:Rahul/app/src/main/AndroidManifest.xml
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD:FinalMyApplication/app/src/main/AndroidManifest.xml
+        <activity android:name=".DoctorRecommendActivity" />
+        <activity android:name=".PatientRecommendActivity" />
+        <activity android:name=".PatientActivity" />
+        <activity android:name=".PatientWishActivity"></activity>
+=======
         <activity android:name=".Registration"></activity>
+>>>>>>> f29f46800cc7bacd25cfdf876df342378672d78e:Rahul/app/src/main/AndroidManifest.xml
     </application>
 
 </manifest>

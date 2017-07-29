@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.admin.mawandroid.Registration">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/register"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/register"
+            android:layout_centerHorizontal="true"
+            />
+            <TextView
+                android:id="@+id/reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textSize="40dp"
+                android:layout_below="@id/register"
+                android:layout_centerHorizontal="true"/>
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter name"
+                android:gravity="center_horizontal"
+                android:layout_below="@id/reg"
+                android:layout_margin="2dp"/>
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter email"
+                android:gravity="center_horizontal"
+                android:layout_below="@id/name"
+                android:layout_margin="2dp"/>
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter password"
+                android:gravity="center_horizontal"
+                android:inputType="textPassword"
+                android:layout_below="@id/email"
+                android:layout_margin="2dp"
+                />
+            <EditText
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter contact"
+                android:gravity="center_horizontal"
+                android:inputType="phone"
+                android:layout_below="@id/password"
+                android:layout_margin="2dp"
+
+                />
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter dob"
+                android:gravity="center_horizontal"
+                android:layout_below="@id/contact"
+                android:layout_margin="2dp"
+                />
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter address"
+                android:gravity="center_horizontal"
+                android:layout_below="@id/dob"
+                android:layout_margin="2dp"
+                />
+            <TextView
+                android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address"
+                android:text="State"
+                android:layout_marginLeft="200px"
+                android:layout_marginTop="10px"
+                />
+
+            <Spinner
+                android:id="@+id/select_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/state"
+                android:layout_toRightOf="@id/state"
+                android:layout_below="@id/address"
+                android:layout_marginLeft="10px"
+                >
+            </Spinner>
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/state"
+                android:text="City"
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="200px"
+
+                />
+
+            <Spinner
+                android:id="@+id/select_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/city"
+                android:layout_toRightOf="@id/city"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/state"
+                android:layout_marginLeft="30px">
+            </Spinner>
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_below="@id/city"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Type"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30px"
+                android:layout_margin="2dp"
+                />
+
+
+
+            <CheckBox
+                android:id="@+id/doc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doctor"
+                android:layout_below="@id/type"
+                android:layout_marginLeft="150px"/>
+            <CheckBox
+                android:id="@+id/wish_grant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wish Granting"
+                android:layout_below="@id/type"
+                android:layout_toRightOf="@id/doc"
+                android:layout_marginLeft="110px"
+                />
+            <CheckBox
+                android:id="@+id/wish_org"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wish Organizing"
+                android:layout_below="@id/wish_grant"
+                android:layout_marginLeft="150px"/>
+            <CheckBox
+                android:id="@+id/donor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Donor"
+                android:layout_toRightOf="@id/wish_org"
+                android:layout_below="@id/wish_grant"
+
+                />
+            <Button
+                android:id="@id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/donor"
+                android:background="@drawable/button"
+                android:textColor="@color/white"
+                android:layout_marginTop="10px"
+                android:layout_margin="2dp"/>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
