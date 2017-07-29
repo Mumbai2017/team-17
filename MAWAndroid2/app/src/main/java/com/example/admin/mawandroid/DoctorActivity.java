@@ -55,8 +55,9 @@ public class DoctorActivity extends AppCompatActivity {
             }
         });
 
+        Session session = Session.getInstance();
         docreferdetails d = new docreferdetails(this,this);
-        d.execute();
+        d.execute(session.getDefaults("email",this));
 
     }
 
