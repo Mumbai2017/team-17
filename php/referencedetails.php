@@ -115,9 +115,8 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 											 
 											 </div>
 											 <div class="col-sm-6">
-											<b> Father:</b> <?php  echo $result["father_name"] ?><br>
-											 <b>Mother: </b><?php  echo $result["mother_name"] ?><br>
-											 <b>Contact No:</b> <?php  echo $result["contactno"] ?><br>
+											<b> Parent:</b> <?php  echo $result["parent_name"] ?><br>
+											 <b>Contact No:</b> <?php  echo $result["phone"] ?><br>
 											<b> Temp Address: </b><?php  echo $result["temp_address"] ?><br>
 										    <b> Permanent Address: </b><?php echo  $result["permanent_address"] ?><br>
 											 </div>
