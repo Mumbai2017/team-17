@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Rahul</string>
+    <string-array name="state">
+        <item>Maharashtra</item>
+        <item>Karnataka</item>
+        <item>Gujarat</item>
+        <item>Rajasthan</item>
+    </string-array>
+    <string-array name="city">
+        <item>Mumbai</item>
+        <item>Bengaluru</item>
+        <item>Surat</item>
+        <item>Kota</item>
+    </string-array>
+
+    <string-array name="gener">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>

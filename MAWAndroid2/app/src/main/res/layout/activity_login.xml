@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.admin.mawandroid.Login">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/maw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/maw"
+        />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/maw"
+        android:hint="Enter e-mail"
+        android:gravity="center_horizontal"
+        >
+    </EditText>
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:hint="Enter password"
+        android:inputType="textPassword"
+        android:gravity="center_horizontal"
+        >
+    </EditText>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:background="@drawable/button"
+        android:textColor="@color/white"
+        android:layout_below="@id/pwd"
+
+        android:layout_marginTop="20px"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:text= "New user? Register here"
+        android:layout_below="@id/login"
+        android:id="@+id/registerlink"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10px"/>
+
+    <ImageButton
+        android:id="@+id/chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/registerlink"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/chat"
+        />
+
+
+</RelativeLayout>s
+</ScrollView>
+</RelativeLayout>
