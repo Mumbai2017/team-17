@@ -11,10 +11,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "SELECT p.id as caseno,d.hospital,p.age,p.name,p.gender,p.mother_tongue,
-p.education,p.father_name,p.mother_name,p.contactno,p.temp_address,p.permanent_address
-from patients p,doctors d,users u
-where p.docid=d.id && p.status='pending' && u.id=d.users_id && p.id= ".$id;
+$sql = "SELECT p.id as caseno,d.hospital,p.age,p.name,p.gender,p.mother_tongue, p.education,p.parent_name,p.phone,p.temp_address,p.permanent_address from patients p,doctors d,users u,wish w 
+where p.doc_id=d.id && w.isgranted=0 && u.id=d.users_id && w.patient_id=p.id && p.id=".$id;
 $followingdata = $conn->query($sql);
 $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 
@@ -44,7 +42,7 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 				</a>
 			</li>
 		</ul>
-		<a class="header-logo header-affix-hide margin-left-no margin-right-no" data-offset-top="213" data-spy="affix" href="index.html">Material</a>
+		<a class="header-logo header-affix-hide margin-left-no margin-right-no" data-offset-top="213" data-spy="affix" href="index.html">Make A Wish</a>
 		<span class="header-logo header-affix margin-left-no margin-right-no" data-offset-top="213" data-spy="affix">Cards</span>
 		<ul class="nav nav-list pull-right">
 			<li class="dropdown margin-right">
@@ -72,91 +70,15 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 				<a class="menu-logo" href="index.html">Make A Wish</a>
 				<ul class="nav">
 					<li>
-						<a class="waves-attach" data-toggle="collapse" href="#doc_menu_components">Components</a>
-						<ul class="menu-collapse collapse in" id="doc_menu_components">
-							<li>
-								<a class="waves-attach" href="ui-button.html">Buttons</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-button-fab.html">Buttons <small>(Floating Action Button)</small></a>
-							</li>
-							<li class="active">
-								<a class="waves-attach" href="ui-card.html">Cards</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-data-table.html">Data Tables</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-dialog.html">Dialogs</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-dropdown-menu.html">Menus</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-nav-drawer.html">Navigation Drawers</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-picker.html">Pickers</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-progress.html">Progress</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-selection-control.html">Selection Controls</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-snackbar.html">Snackbars</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-tab.html">Tabs</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-text-field.html">Text Fields</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-toolbar.html">Toolbars</a>
-							</li>
-						</ul>
+						<a class="waves-attach"  href="dashboard.php">Dashboard</a>
+						</li>
+					<li>
+						<a class="collapsed waves-attach"  href="index.php">ChildReferences</a>
+						
 					</li>
 					<li>
-						<a class="collapsed waves-attach" data-toggle="collapse" href="#doc_menu_extras">Extras</a>
-						<ul class="menu-collapse collapse" id="doc_menu_extras">
-							<li>
-								<a class="waves-attach" href="ui-avatar.html">Avatars</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-icon.html">Icons</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-label.html">Labels</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-nav.html">Navs</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-tile.html">Tiles</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a class="collapsed waves-attach" data-toggle="collapse" href="#doc_menu_javascript">Javascript</a>
-						<ul class="menu-collapse collapse" id="doc_menu_javascript">
-							<li>
-								<a class="waves-attach" href="ui-affix.html">Affix</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-collapse.html">Collapse</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-dropdown-menu.html">Dropdown</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-modal.html">Modals</a>
-							</li>
-							<li>
-								<a class="waves-attach" href="ui-tab.html">Togglable Tabs</a>
-							</li>
-						</ul>
+						<a class="collapsed waves-attach"  href="wishes.php">Wishes</a>
+						
 					</li>
 				</ul>
 			</div>
@@ -184,7 +106,7 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 
 											 <div class="col-sm-6">
 												<b>Case no:</b><?php echo $result["caseno"] ?><br>
-												<b>Name of Hospital: </br><?php echo  $result["hospital"] ?><br>
+												<b>Name of Hospital: </b><?php echo  $result["hospital"] ?><br>
 												<b>Name:</b><?php echo  $result["name"] ?><br>
 												<b>Age: </b><?php echo  $result["age"] ?><br>
 												<b>Gender: </b><?php  echo $result["gender"] ?><br>
@@ -221,7 +143,7 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 	</main>
 	<footer class="footer">
 		<div class="container">
-			<p>Material</p>
+			<p>Make A Wish</p>
 		</div>
 	</footer>
 	<div class="fbtn-container">

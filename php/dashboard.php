@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
-	<title>Tabs - Material</title>
+	<title>Tabs - Make A Wish</title>
 	
 	<!-- css -->
 	<link href="../css/base.min.css" rel="stylesheet">
@@ -125,7 +125,7 @@ var data = new google.visualization.DataTable();
 				</a>
 			</li>
 		</ul>
-		<a class="header-logo header-affix-hide margin-left-no margin-right-no" data-offset-top="213" data-spy="affix" href="index.html">Material</a>
+		<a class="header-logo header-affix-hide margin-left-no margin-right-no" data-offset-top="213" data-spy="affix" href="index.html">Make A Wish</a>
 		<span class="header-logo header-affix margin-left-no margin-right-no" data-offset-top="213" data-spy="affix">Tabs</span>
 		<ul class="nav nav-list pull-right visible-xx-block">
 			<li class="dropdown margin-right">
@@ -149,6 +149,25 @@ var data = new google.visualization.DataTable();
 		
 	</header>
 	<nav aria-hidden="true" class="menu" id="doc_menu" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-content">
+				<a class="menu-logo" href="index.html">Make A Wish</a>
+				<ul class="nav">
+					<li>
+						<a class="waves-attach"  href="dashboard.php">Dashboard</a>
+						</li>
+					<li>
+						<a class="collapsed waves-attach"  href="index.php">ChildReferences</a>
+						
+					</li>
+					<li>
+						<a class="collapsed waves-attach"  href="wishes.php">Wishes</a>
+						
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 		<div class="menu-scroll">
 			<div class="menu-content">
 				<a class="menu-logo" href="index.html">Material</a>
@@ -284,7 +303,7 @@ var data = new google.visualization.DataTable();
 											</div>
 										</div>
 										<div class="tab-pane fade" id="doc_tab_example_2_brand">
-											<div id="curve_chart" style="margin-left:100px;width:1500px; height: 700px;"></div>
+											<div id="curve_chart" style="margin-left:100px;"></div>
 										</div>
 										<div class="tab-pane fade" id="doc_tab_example_3_brand">
 										<ol>
@@ -322,7 +341,7 @@ var data = new google.visualization.DataTable();
 	</main>
 	<footer class="footer">
 		<div class="container">
-			<p>Material</p>
+			<p>Make A Wish</p>
 		</div>
 	</footer>
 	<div class="fbtn-container">

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "maw";
+$dbname = "maw2";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -10,7 +10,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "SELECT p.id,p.age,p.name,u.name as docname from patients p,doctors d,users u,wish w where p.doc_id=d.id && w.patient_id=p.id && u.id=d.users_id";
+$sql = "select w.patient_id,w.v1_id,w.v2_id,u.name,p.name,w.year
+from wish w,patients p,doctors d,users u
+where p.id=w.patient_id && w.isGranted=0 && u.id=d.users_id";
 $result = $conn->query($sql);
 
 ?>
@@ -179,7 +181,7 @@ $result = $conn->query($sql);
 	<main class="content">
 		<div class="content-heading">
 			<div class="container">
-				<h1 class="heading">Child References</h1>
+				<h1 class="heading">Pending Wishes</h1>
 			</div>
 		</div>
 		<div class="container">
