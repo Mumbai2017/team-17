@@ -120,7 +120,26 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 											<b> Temp Address: </b><?php  echo $result["temp_address"] ?><br>
 										    <b> Permanent Address: </b><?php echo  $result["permanent_address"] ?><br>
 											 </div>
-	 
+											 <br>
+											<div class="dropdown-wrap">
+												<div class="dropdown dropdown-inline">
+													<a class="btn dropdown-toggle-btn" data-toggle="dropdown"> sbgfgnfcncgfcgngx </a>
+													<ul class="dropdown-menu nav">
+														<li>
+															<a> asdasdasdsad </a>
+															
+														</li>
+														<li>
+															<a> asdwdwd </a>
+															
+														</li>
+														<li>
+															<a> tytytyty </a>
+															
+														</li>
+													</ul>
+												</div>
+											</div>
 	 
 	 
 	 

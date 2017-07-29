@@ -8,16 +8,56 @@
 	
 	<!-- css -->
 	<link href="../css/base.min.css" rel="stylesheet">
-
+	<script
+  src="http://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 	<!-- css for doc -->
 	<link href="../css/project.min.css" rel="stylesheet">
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+	
     <script type="text/javascript">
 		$(document).ready(function(){
 			
-			
+			setTimeout(function(){
+
+
+	setInterval(notification(0),12000);
+},5000);
+	
+
+
+
+	function notification(old){
+		$.ajax({
+url: "notification.php",
+type:'GET',
+success(count){
+	var count=parseInt(count);
+	if (count>old)
+	{
+		$("#noti").show(3000);
+		$("#noti").hide(1000);
+
+	old=count;	
+
+	$.ajax({
+		url:'notified.php',
+		type:'GET',
+		success(){
+			console.log("done updating");
+		}
+	});
+
+
+	}
+}
+
+});
+		
+	}
+
+
 			
 			
 		    $.ajax({
@@ -269,6 +309,7 @@ var data = new google.visualization.DataTable();
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-0">
 						<h1 class="heading">Dashboard</h1>
+						<div id="noti" style="display: none;">You have new wishes added to the data base</div>
 					</div>
 				</div>
 			</div>
