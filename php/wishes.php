@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "maw2";
+$dbname = "maw";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -10,9 +10,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "select w.patient_id,w.v1_id,w.v2_id,u.name,p.name,w.year
-from wish w,patients p,doctors d,users u
-where p.id=w.patient_id && w.isGranted=0 && u.id=d.users_id";
+$sql = "SELECT wish.id,patients.name,users.name as volunteer,wish.description,wish.status,patients.age,wish.type from wish,patients,users,v1 
+where wish.patient_id=patients.id && v1.id=wish.v1_id && users.id=v1.id";
 $result = $conn->query($sql);
 
 ?>
@@ -202,15 +201,18 @@ $result = $conn->query($sql);
 							<div class="card card-white">
 								<div class="card-main">
 									<div class="card-inner">
-										<p class="card-heading">Child Name: <?php echo $row["name"] ?></p>
+					   <p class="card-heading">Child Name: 			<?php echo $row["name"] ?></p>
 										<p>
-											Doctor Name:<?php echo $row["docname"] ?><br>
-											Age :  <?php echo $row["age"] ?>
+											<b>Volunteer Allotted:</b>&nbsp &nbsp	<?php echo $row["volunteer"] ?><br>
+											<b>Description :</b> <br> 		<?php echo $row["description"] ?><br>
+											<b>Age :</b> &nbsp&nbsp	&nbsp&nbsp				<?php echo $row["age"] ?><br>
+											<b>Status:</b> &nbsp&nbsp&nbsp				<?php echo $row["status"] ?><br>
+											<b>Wish Type:</b> &nbsp&nbsp			<?php if ($row["type"]==1){ echo "Rush Wish";} else {echo "Normal Wish"; }?><br>
 										</p>
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<a class="btn btn-flat waves-attach waves-light" id=<?php echo $row["id"] ?> href="referencedetails.php?id=<?php echo $row["id"] ?>"><span class="icon">check</span>&nbsp;View</a>
+											<a class="btn btn-flat waves-attach waves-light" id=<?php echo $row["id"] ?> href="referencedetails.php?id=<?php echo $row["id"] ?>"><span class="icon">check</span>&nbsp;Mark Granted</a>
 										</div>
 									</div>
 								</div>
