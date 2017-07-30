@@ -63,11 +63,11 @@
                 android:inputType="textMultiLine"
                 />
 
-            <CheckBox
+           <!-- <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rush wish?"
-                />
+                />-->
 
             <Button
                 android:layout_width="match_parent"

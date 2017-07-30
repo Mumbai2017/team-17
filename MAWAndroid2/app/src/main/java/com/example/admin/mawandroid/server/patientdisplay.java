@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.example.admin.mawandroid.DoctorActivity;
 import com.example.admin.mawandroid.Notifier.Notifier;
+import com.example.admin.mawandroid.PatientDisplayActivity;
 import com.example.admin.mawandroid.PatientWishActivity;
 import com.example.admin.mawandroid.Session;
 
@@ -25,20 +26,19 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 
 /**
  * Created by Admin on 30-07-2017.
  */
 
-public class docreferdetails extends AsyncTask<String, Void, String> {
+public class patientdisplay extends AsyncTask<String, Void, String> {
 
     Context context;
     Activity activity;
 
 
 
-    public docreferdetails(Context context, Activity activity){
+    public patientdisplay(Context context, Activity activity){
         this.context = context;
         this.activity = activity;
 
@@ -49,16 +49,15 @@ public class docreferdetails extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... params) {
         try {
 
-            URL url=new URL(IP.docrefer);
-            Log.e("URL.....",IP.docrefer);
+            URL url=new URL(IP.patientwish);
+            Log.e("URL.....",IP.login);
             HttpURLConnection httpURLConnection=(HttpURLConnection)url.openConnection();
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
             OutputStream outputStream=httpURLConnection.getOutputStream();
             BufferedWriter bufferedWriter=new BufferedWriter((new OutputStreamWriter(outputStream,"UTF-8")));
-            String data= URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8");
-
+            String data= URLEncoder.encode("id","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8");
             bufferedWriter.write(data);
             bufferedWriter.flush();
             bufferedWriter.close();
@@ -97,37 +96,34 @@ public class docreferdetails extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String s) {
 
-
+            String data = "";
 
         if(s==null){
             Notifier.createAlertDialog(context, "Please try again later", "Login error","ok");
         }else{
 //            Notifier.createAlertDialog(context, s, "connection","Ok");
-            ArrayList list = new ArrayList<>();
             Log.e("Entered...","else");
             try {
                 Log.e("Before","json");
                 JSONObject json = new JSONObject(s);
                 JSONArray json1 = json.getJSONArray("data");
-                Session session = Session.getInstance();
-                session.setDefaults("data",json.toString(),context);
                 Log.e("JSON",s);
                 // context.startActivity(new Intent(context, DoctorActivity.class));
-                 Notifier.createAlertDialog(context,Integer.toString(json1.length()),"test","Ok");
+//                  Notifier.createAlertDialog(context,Integer.toString(json1.length()),"test","Ok");
                 for (int i = 0; i < json1.length(); i++) {
                     JSONObject jsonO = json1.getJSONObject(i);
-                    //   Notifier.createAlertDialog(context,jsonO.getString("type"),"test","Ok");
-                    //Notifier.createAlertDialog(context, jsonO.getString("id")+" "+jsonO.getString("name")+" "+jsonO.getString("status"),"test","Ok");
-                    list.add("name : "+jsonO.getString("name")+"\nstatus : "+jsonO.getString("status"));
-//                    Notifier.createAlertDialog(context, list.get(0).toString(),"Hi","Ok");
+                    data=data +"\n\nName :"+jsonO.getString("name");
+                    data=data +"\n\nAge :"+jsonO.getString("age");
+                    data=data +"\n\nStatus :"+jsonO.getString("status");
+                    data=data +"\n\nIs completed? :"+jsonO.getString("isCompleted");
+                    data=data +"\n\nDescription :"+jsonO.getString("description");
                 }
 
-            }catch(Exception e){
+                PatientDisplayActivity pa = (PatientDisplayActivity) context;
+                pa.setData(data);
 
-            }finally {
-                DoctorActivity doctorActivity = (DoctorActivity)context;
-               // doctorActivity.getInstance();
-                doctorActivity.updateList(list);
+
+            }catch(Exception e){
 
             }
 

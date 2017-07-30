@@ -25,7 +25,10 @@
         <activity android:name=".PatientActivity" />
         <activity android:name=".PatientRecommendActivity" />
         <activity android:name=".PatientWishActivity" />
-        <activity android:name=".validation.ChatActivity"></activity>
+        <activity android:name=".validation.ChatActivity" />
+        <activity android:name=".PatientDisplayActivity" />
+        <activity android:name=".DonorActivity" />
+        <activity android:name=".DonorDonateActivity"></activity>
     </application>
 
 </manifest>

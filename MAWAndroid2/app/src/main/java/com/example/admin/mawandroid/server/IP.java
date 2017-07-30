@@ -10,6 +10,8 @@ public class IP {
     public static String login = ip + "login.php";
     public static String register = ip + "register.php";
     public static String docrefer = ip + "doc_refer_details.php";
+    public static String patientwish = ip + "patient_wish_details.php";
+    public static String patientdoctor = ip + "patient_details.php";
 
 }
 

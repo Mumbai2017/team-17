@@ -2,13 +2,11 @@ package com.example.admin.mawandroid.server;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.admin.mawandroid.DoctorActivity;
 import com.example.admin.mawandroid.Notifier.Notifier;
-import com.example.admin.mawandroid.PatientWishActivity;
+import com.example.admin.mawandroid.PatientDisplayActivity;
 import com.example.admin.mawandroid.Session;
 
 import org.json.JSONArray;
@@ -25,20 +23,19 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 
 /**
  * Created by Admin on 30-07-2017.
  */
 
-public class docreferdetails extends AsyncTask<String, Void, String> {
+public class patientdoctor extends AsyncTask<String, Void, String> {
 
     Context context;
     Activity activity;
 
 
 
-    public docreferdetails(Context context, Activity activity){
+    public patientdoctor(Context context, Activity activity){
         this.context = context;
         this.activity = activity;
 
@@ -49,23 +46,38 @@ public class docreferdetails extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... params) {
         try {
 
-            URL url=new URL(IP.docrefer);
-            Log.e("URL.....",IP.docrefer);
+            URL url=new URL(IP.patientdoctor);
+            Log.e("URL.....",IP.login);
             HttpURLConnection httpURLConnection=(HttpURLConnection)url.openConnection();
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
             OutputStream outputStream=httpURLConnection.getOutputStream();
-            BufferedWriter bufferedWriter=new BufferedWriter((new OutputStreamWriter(outputStream,"UTF-8")));
-            String data= URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8");
+            Session session = Session.getInstance();
 
+            BufferedWriter bufferedWriter=new BufferedWriter((new OutputStreamWriter(outputStream,"UTF-8")));
+            String data= URLEncoder.encode("name","UTF-8")+"="+URLEncoder.encode(params[0],"UTF-8")+"&"+
+                    URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(params[1],"UTF-8")+"&"+
+                    URLEncoder.encode("mother_tongue","UTF-8")+"="+URLEncoder.encode(params[2],"UTF-8")+"&"+
+                    URLEncoder.encode("parent","UTF-8")+"="+URLEncoder.encode(params[3],"UTF-8")+"&"+
+                    URLEncoder.encode("dob","UTF-8")+"="+URLEncoder.encode(params[4],"UTF-8")+"&"+
+                    URLEncoder.encode("city","UTF-8")+"="+URLEncoder.encode(params[5],"UTF-8")+"&"+
+                    URLEncoder.encode("state","UTF-8")+"="+URLEncoder.encode(params[6],"UTF-8")+"&"+
+                    URLEncoder.encode("phone","UTF-8")+"="+URLEncoder.encode(params[7],"UTF-8")+"&"+
+                    URLEncoder.encode("type","UTF-8")+"="+URLEncoder.encode(params[8],"UTF-8")+"&"+
+                    URLEncoder.encode("address","UTF-8")+"="+URLEncoder.encode(params[9],"UTF-8")+"&"+
+                    URLEncoder.encode("notes","UTF-8")+"="+URLEncoder.encode(params[10],"UTF-8")+"&"+
+                    URLEncoder.encode("docemail","UTF-8")+"="+URLEncoder.encode(session.getDefaults("email",context),"UTF-8");
             bufferedWriter.write(data);
             bufferedWriter.flush();
             bufferedWriter.close();
             outputStream.close();
             InputStream inputStream=httpURLConnection.getInputStream();
 
-            BufferedReader bufferedReader=new BufferedReader((new InputStreamReader(inputStream,"iso-8859-1")));
+
+
+
+                    BufferedReader bufferedReader=new BufferedReader((new InputStreamReader(inputStream,"iso-8859-1")));
             String response="";
             String line="";
             while ((line=bufferedReader.readLine())!=null)
@@ -97,37 +109,18 @@ public class docreferdetails extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String s) {
 
-
+        String data = "";
 
         if(s==null){
             Notifier.createAlertDialog(context, "Please try again later", "Login error","ok");
         }else{
 //            Notifier.createAlertDialog(context, s, "connection","Ok");
-            ArrayList list = new ArrayList<>();
             Log.e("Entered...","else");
             try {
                 Log.e("Before","json");
-                JSONObject json = new JSONObject(s);
-                JSONArray json1 = json.getJSONArray("data");
-                Session session = Session.getInstance();
-                session.setDefaults("data",json.toString(),context);
-                Log.e("JSON",s);
-                // context.startActivity(new Intent(context, DoctorActivity.class));
-                 Notifier.createAlertDialog(context,Integer.toString(json1.length()),"test","Ok");
-                for (int i = 0; i < json1.length(); i++) {
-                    JSONObject jsonO = json1.getJSONObject(i);
-                    //   Notifier.createAlertDialog(context,jsonO.getString("type"),"test","Ok");
-                    //Notifier.createAlertDialog(context, jsonO.getString("id")+" "+jsonO.getString("name")+" "+jsonO.getString("status"),"test","Ok");
-                    list.add("name : "+jsonO.getString("name")+"\nstatus : "+jsonO.getString("status"));
-//                    Notifier.createAlertDialog(context, list.get(0).toString(),"Hi","Ok");
-                }
+                Notifier.createAlertDialog(context,s,"Result","Ok");
 
             }catch(Exception e){
-
-            }finally {
-                DoctorActivity doctorActivity = (DoctorActivity)context;
-               // doctorActivity.getInstance();
-                doctorActivity.updateList(list);
 
             }
 
