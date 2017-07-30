@@ -17,21 +17,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Date of admission"
-                android:id="@+id/doa"
-                android:layout_margin="5dp"
-                android:inputType="date"
-                />
 
 
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Date of identification"
+                android:hint="name"
                 android:layout_margin="5dp"
                 android:id="@+id/doi"
                 android:inputType="date"

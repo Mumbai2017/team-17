@@ -16,23 +16,19 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class PatientActivity extends AppCompatActivity {
+public class PatientGrantedActivity extends AppCompatActivity {
 
     ListView listView;
     ArrayAdapter arrayAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient);
-        setTitle("Volunteer Dashboard");
+        setContentView(R.layout.activity_patient_granted);
 
         Session session = Session.getInstance();
         patientvolunteer pa = new patientvolunteer(this, this);
         pa.execute(session.getDefaults("emailid",this));
-
-
     }
 
 
@@ -51,10 +47,8 @@ public class PatientActivity extends AppCompatActivity {
                         JSONObject jsonO = json1.getJSONObject(position);
                         //Toast.makeText(DoctorActivity.this, jsonO.getString("id"), Toast.LENGTH_SHORT).show();;
                         ;
-                        Intent intent = new Intent(PatientActivity.this, PatientWishActivity.class);
-                        intent.putExtra("name",jsonO.getString("name"));
-                        intent.putExtra("id",jsonO.getString("id"));
-                        startActivity(intent);
+
+                        startActivity(new Intent(PatientGrantedActivity.this, PatientWishActivity.class));
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -68,6 +62,5 @@ public class PatientActivity extends AppCompatActivity {
 
 
     }
-
 
 }

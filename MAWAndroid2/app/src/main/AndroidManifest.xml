@@ -28,7 +28,9 @@
         <activity android:name=".validation.ChatActivity" />
         <activity android:name=".PatientDisplayActivity" />
         <activity android:name=".DonorActivity" />
-        <activity android:name=".DonorDonateActivity"></activity>
+        <activity android:name=".DonorDonateActivity" />
+        <activity android:name=".SuccessDonationActivity" />
+        <activity android:name=".PatientGrantedActivity"></activity>
     </application>
 
 </manifest>

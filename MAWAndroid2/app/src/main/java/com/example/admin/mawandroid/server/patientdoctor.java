@@ -112,7 +112,7 @@ public class patientdoctor extends AsyncTask<String, Void, String> {
         String data = "";
 
         if(s==null){
-            Notifier.createAlertDialog(context, "Please try again later", "Login error","ok");
+            Notifier.createAlertDialog(context, "Please try again later", "Connection error","ok");
         }else{
 //            Notifier.createAlertDialog(context, s, "connection","Ok");
             Log.e("Entered...","else");

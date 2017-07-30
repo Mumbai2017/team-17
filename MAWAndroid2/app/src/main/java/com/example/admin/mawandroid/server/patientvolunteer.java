@@ -99,9 +99,9 @@ public class patientvolunteer extends AsyncTask<String, Void, String> {
 
 
         if(s==null){
-            Notifier.createAlertDialog(context, "Please try again later", "Login error","ok");
+            Notifier.createAlertDialog(context, "Please try again later", "Connection error","ok");
         }else{
-//            Notifier.createAlertDialog(context, s, "connection","Ok");
+            Notifier.createAlertDialog(context, s, "connection","Ok");
             ArrayList list = new ArrayList<>();
             Log.e("Entered...","else");
             try {
@@ -117,7 +117,8 @@ public class patientvolunteer extends AsyncTask<String, Void, String> {
                     JSONObject jsonO = json1.getJSONObject(i);
                     //   Notifier.createAlertDialog(context,jsonO.getString("type"),"test","Ok");
                     //Notifier.createAlertDialog(context, jsonO.getString("id")+" "+jsonO.getString("name")+" "+jsonO.getString("status"),"test","Ok");
-                    list.add("name : "+jsonO.getString("name")+"\nstatus : "+jsonO.getString("status"));
+                    list.add("name : "+jsonO.getString("name")+"\nage : "+jsonO.getString("age")+
+                    "\ndate of birth : "+jsonO.getString("dob")+"\naddress : "+jsonO.getString("address"));
 //                    Notifier.createAlertDialog(context, list.get(0).toString(),"Hi","Ok");
                 }
 
