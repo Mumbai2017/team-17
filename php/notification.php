@@ -1,7 +1,7 @@
 <?php
 
 $con=mysql_connect('localhost','root','');
-mysql_select_db('maw2',$con);
+mysql_select_db('maw',$con);
 
 $query="SELECT * from wish where notified=0";
 $run=mysql_query($query);
