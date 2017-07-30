@@ -22,6 +22,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Date of admission"
                 android:id="@+id/doa"
+                android:layout_margin="5dp"
                 android:inputType="date"
                 />
 
@@ -31,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Date of identification"
+                android:layout_margin="5dp"
                 android:id="@+id/doi"
                 android:inputType="date"
                 />
@@ -42,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Wish 1"
                 android:id="@+id/w1"
+                android:layout_margin="5dp"
                 android:inputType="textMultiLine"
                 />
 
@@ -51,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Wish 2 "
                 android:id="@+id/w2"
+                android:layout_margin="5dp"
                 android:inputType="textMultiLine"
                 />
 
@@ -60,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Wish 3"
                 android:id="@+id/w3"
+                android:layout_margin="5dp"
                 android:inputType="textMultiLine"
                 />
 
@@ -73,6 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Submit"
+                android:layout_margin="5dp"
                 android:background="@drawable/button"
                 android:textColor="@color/white"
                 />
