@@ -26,5 +26,10 @@
         android:icon="@drawable/ic_action_donor"
         />
 
+    <item
+        android:id="@+id/logout"
+        android:title="Logout"
+        />
+
 </menu>
 

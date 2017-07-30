@@ -67,6 +67,7 @@ public class patientdoctor extends AsyncTask<String, Void, String> {
                     URLEncoder.encode("type","UTF-8")+"="+URLEncoder.encode(params[8],"UTF-8")+"&"+
                     URLEncoder.encode("address","UTF-8")+"="+URLEncoder.encode(params[9],"UTF-8")+"&"+
                     URLEncoder.encode("notes","UTF-8")+"="+URLEncoder.encode(params[10],"UTF-8")+"&"+
+                    URLEncoder.encode("aadhar","UTF-8")+"="+URLEncoder.encode(params[11],"UTF-8")+"&"+
                     URLEncoder.encode("docemail","UTF-8")+"="+URLEncoder.encode(session.getDefaults("email",context),"UTF-8");
             bufferedWriter.write(data);
             bufferedWriter.flush();

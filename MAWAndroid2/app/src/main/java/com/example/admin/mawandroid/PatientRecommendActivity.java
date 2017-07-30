@@ -57,9 +57,11 @@ public class PatientRecommendActivity extends AppCompatActivity {
         if(ch.isChecked()){
             rush_wish="1";
         }
+        EditText aa = (EditText)findViewById(R.id.aadhar);
+        String aadhar = aa.getText().toString();
 
         patientdoctor pd=new patientdoctor(this,this);
-        pd.execute(pname,em,mTongue,parentName, dob, "Mumbai", "Maharashtra",contact,rush_wish, permanentAdd, docNotes);
+        pd.execute(pname,em,mTongue,parentName, dob, "Mumbai", "Maharashtra",contact,rush_wish, permanentAdd, docNotes,aadhar);
 
     }
 

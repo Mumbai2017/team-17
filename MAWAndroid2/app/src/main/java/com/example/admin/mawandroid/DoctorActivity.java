@@ -115,6 +115,14 @@ public class DoctorActivity extends AppCompatActivity {
             case R.id.donor:
                 startActivity(new Intent(DoctorActivity.this, DonorActivity.class));
                 return true;
+            case R.id.vol2:
+                startActivity(new Intent(DoctorActivity.this, PatientActivity.class));
+                return true;
+            case R.id.logout:
+                Session session = Session.getInstance();
+                session.clearSharedPreference(this);
+                startActivity(new Intent(this, Login.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
