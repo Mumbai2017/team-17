@@ -92,7 +92,7 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 	<main class="content">
 		<div class="content-heading">
 			<div class="container">
-				<h1 class="heading">Reference Details</h1>
+				<h1 class="heading">Wishes Details</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -110,54 +110,54 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 										 <div class="container">
 
 											 <div class="col-sm-6">
-												<b>Case no:</b><?php echo $result["caseno"] ?><br>
-												<b>Name of Hospital: </b><?php echo  $result["hospital"] ?><br>
-												<b>Name:</b><?php echo  $result["name"] ?><br>
-												<b>Age: </b><?php echo  $result["age"] ?><br>
-												<b>Gender: </b><?php  echo $result["gender"] ?><br>
-												<b>Mother Tounge: </b><?php  echo $result["mother_tongue"] ?><br>
-												<b>Education: </b><?php echo  $result["education"] ?><br>
+												<b><u>Case no:</b></u><?php echo $result["caseno"] ?><br>
+												<b><u>Name of Hospital: </b></u>	<?php echo  $result["hospital"] ?><br>
+												<b><u>Name:</u></b><?php echo  $result["name"] ?><br>
+												<b><u>Age: </u></b><?php echo  $result["age"] ?><br>
+												<b><u>Gender: </u></b><?php  echo $result["gender"] ?><br>
+												<b><u>Mother Tounge: </u></b><?php  echo $result["mother_tongue"] ?><br>
+												<b><u>Education: </u></b><?php echo  $result["education"] ?><br>
 											 
 											 </div>
 											 <div class="col-sm-6">
-											<b> Parent:</b> <?php  echo $result["parent_name"] ?><br>
-											 <b>Contact No:</b> <?php  echo $result["phone"] ?><br>
-											<b> Temp Address: </b><?php  echo $result["temp_address"] ?><br>
-										    <b> Permanent Address: </b><?php echo  $result["permanent_address"] ?><br>
+											<b><u> Parent:</b></u> <?php  echo $result["parent_name"] ?><br>
+											 <b><u>Contact No:</b></u> <?php  echo $result["phone"] ?><br>
+											<b><u> What woul u like to be when grown up: </b></u>I want to be so and so when I grow up<br>
+										    <b><u> Permanent Address: </b></u><?php echo  $result["permanent_address"] ?><br>
+											 </div>
+											 <div class="col-sm-6">
+											<b><u> About Famliy:</b></u> Financiallyly less stable<br>
+											 <b><u>About Friend:</b></u> NO close friends<br>
+											<b><u> Govt ID Parents: </b></u>Adhaar Card<br>
+										    <b><u> Favourite: </b></u>Color-Red<br> 
+											<b><u>Hobby</b></u>Drawing<br>
 											 </div>
 											 <br>
-											<p >Please select a volunteer</p>
-											<select id="vol">
-											<?php 
-												$sql = "SELECT users.name as name ,v1.id as id from v1 join users on v1.id=users.id";
-												$followingdata = $conn->query($sql);
-												//$result = $followingdata->fetch_array(MYSQLI_ASSOC);
-												
-												while($row = $followingdata->fetch_assoc()) {
+											<p >Please select a volunteer</p><br><br><br>
+											<div id="border_css">
+											<div class="checkbox checkbox-adv">
+													&nbsp &nbsp <label for="doc_checkbox_example_1">
+														<input class="access-hide" id="doc_checkbox_example_1" name="doc_checkbox_example" type="checkbox">To buy a bicycle
+														<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
+													</label>
+												</div>
+											<div class="checkbox checkbox-adv">
+													&nbsp &nbsp <label for="doc_checkbox_example_2">
+														<input class="access-hide" id="doc_checkbox_example_2" name="doc_checkbox_exsample" type="checkbox">To go to disneyland
+														<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
+													</label>
+												</div>
+											<div class="checkbox checkbox-adv">
+													&nbsp &nbsp <label for="doc_checkbox_example_3">
+														<input class="access-hide" id="doc_checkbox_example_3" name="doc_checkbox_exsamaple" type="checkbox">To meet somone
+														<span class="checkbox-circle"></span><span class="checkbox-circle-check"></span><span class="checkbox-circle-icon icon">done</span>
+													</label>
+												</div>
+												<br><br><br>
+											&nbsp &nbsp 
+											<a class="btn" id="assign"  href="dashboard.php"> Grant </a>
+												</div>
 											
-											
-											?>
-												
-												
-														<option value=<?php echo $row["id"]; ?>  ><?php echo $row["name"]; ?></option>
-														
-												 
-												
-													
-											<?php
-											
-												}
-												
-												$id=$row["id"];
-												$wid=$result["caseno"];
-												$_SESSION["id"]=1;
-												$_SESSION["wid"]=$wid;
-												
-												
-											?>
-											
-											</select>&nbsp &nbsp 
-											<a class="btn" id="assign"  href="dashboard.php"> Assign </a>
 											
 											
 										</div>
@@ -174,6 +174,13 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 			</section>
 		</div>
 	</main>
+	<style>
+	#border_css{
+		border-style: solid;
+    border-width: 2px;
+	padding:5px 5px 5px 15px;
+	}
+	</style>
 	<footer class="footer">
 		<div class="container">
 			<p>Make A Wish</p>

@@ -56,7 +56,7 @@ $result = $conn->query($sql);
 						<a class="padding-right-lg waves-attach" href="javascript:void(0)"><span class="icon icon-lg margin-right">add_to_photos</span>Upload Photo</a>
 					</li>
 					<li>
-						<a class="padding-right-lg waves-attach" href="page-login.html"><span class="icon icon-lg margin-right">exit_to_app</span>Logout</a>
+						<a class="padding-right-lg waves-attach" href="login.php"><span class="icon icon-lg margin-right">exit_to_app</span>Logout</a>
 					</li>
 				</ul>
 			</li>
@@ -76,6 +76,10 @@ $result = $conn->query($sql);
 					</li>
 					<li>
 						<a class="collapsed waves-attach"  href="wishes.php">Wishes</a>
+						
+					</li>
+					<li>
+						<a class="collapsed waves-attach"  href="refdoc.php">Refered Doctors</a>
 						
 					</li>
 				</ul>
@@ -212,7 +216,7 @@ $result = $conn->query($sql);
 									</div>
 									<div class="card-action">
 										<div class="card-action-btn pull-left">
-											<a class="btn btn-flat waves-attach waves-light" id=<?php echo $row["id"] ?> href="referencedetails.php?id=<?php echo $row["id"] ?>"><span class="icon">check</span>&nbsp;Mark Granted</a>
+											<a class="btn btn-flat waves-attach waves-light" id=<?php echo $row["id"] ?> href="wishesdetails.php?id=<?php echo $row["id"] ?>"><span class="icon">check</span>&nbsp;Mark Granted</a>
 										</div>
 									</div>
 								</div>
@@ -241,16 +245,7 @@ $result = $conn->query($sql);
 			<p>Make A Wish</p>
 		</div>
 	</footer>
-	<div class="fbtn-container">
-		<div class="fbtn-inner">
-			<a class="fbtn fbtn-lg fbtn-brand-accent waves-attach waves-circle waves-light" data-toggle="dropdown"><span class="fbtn-text">Links</span><span class="fbtn-ori icon">apps</span><span class="fbtn-sub icon">close</span></a>
-			<div class="fbtn-dropdown">
-				<a class="fbtn waves-attach waves-circle" href="https://github.com/Daemonite/material" target="_blank"><span class="fbtn-text">Fork me on GitHub</span><span class="icon">code</span></a>
-				<a class="fbtn fbtn-brand waves-attach waves-circle waves-light" href="https://twitter.com/daemonites" target="_blank"><span class="fbtn-text">Follow Daemon on Twitter</span><span class="icon">share</span></a>
-				<a class="fbtn fbtn-green waves-attach waves-circle" href="http://www.daemon.com.au/" target="_blank"><span class="fbtn-text">Visit Daemon Website</span><span class="icon">link</span></a>
-			</div>
-		</div>
-	</div>
+	
 
 	<!-- js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
