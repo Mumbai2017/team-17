@@ -332,6 +332,9 @@ var data = new google.visualization.DataTable();
 										<li>
 											<a class="waves-attach" data-toggle="tab" href="#doc_tab_example_3_brand">Top 5 volunteers</a>
 										</li>
+										<li>
+											<a class="waves-attach" data-toggle="tab" href="#doc_tab_example_4_brand">Region Wise</a>
+										</li>
 									</ul>
 								</nav>
 								<div class="card-inner">

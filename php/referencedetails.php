@@ -1,4 +1,5 @@
 <?php
+session_start();
 $id=$_GET['id'];
 $servername = "localhost";
 $username = "root";
@@ -121,30 +122,40 @@ $result = $followingdata->fetch_array(MYSQLI_ASSOC);
 										    <b> Permanent Address: </b><?php echo  $result["permanent_address"] ?><br>
 											 </div>
 											 <br>
-											<div class="dropdown-wrap">
-												<div class="dropdown dropdown-inline">
-													<a class="btn dropdown-toggle-btn" data-toggle="dropdown"> sbgfgnfcncgfcgngx </a>
-													<ul class="dropdown-menu nav">
-														<li>
-															<a> asdasdasdsad </a>
-															
-														</li>
-														<li>
-															<a> asdwdwd </a>
-															
-														</li>
-														<li>
-															<a> tytytyty </a>
-															
-														</li>
-													</ul>
-												</div>
-											</div>
-	 
-	 
-	 
-	 
-	 
+											<p >Please select a volunteer</p>
+											<select id="vol">
+											<?php 
+												$sql = "SELECT users.name as name ,v1.id as id from v1 join users on v1.id=users.id";
+												$followingdata = $conn->query($sql);
+												//$result = $followingdata->fetch_array(MYSQLI_ASSOC);
+												
+												while($row = $followingdata->fetch_assoc()) {
+											
+											
+											?>
+												
+												
+														<option value=<?php echo $row["id"]; ?>  ><?php echo $row["name"]; ?></option>
+														
+												 
+												
+													
+											<?php
+											
+												}
+												
+												$id=$row["id"];
+												$wid=$result["caseno"];
+												$_SESSION["id"]=1;
+												$_SESSION["wid"]=$wid;
+												
+												
+											?>
+											
+											</select>&nbsp &nbsp 
+											<a class="btn" id="assign"  href="dashboard.php"> Assign </a>
+											
+											
 										</div>
 	 	
 									</div>
