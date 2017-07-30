@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.admin.mawandroid.server.patientvolunteer;
 
@@ -48,8 +49,9 @@ public class PatientActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     try {
+                        System.out.println("Entered here");
                         JSONObject jsonO = json1.getJSONObject(position);
-                        //Toast.makeText(DoctorActivity.this, jsonO.getString("id"), Toast.LENGTH_SHORT).show();;
+//                        Toast.makeText(PatientActivity.this, jsonO.getString("id"), Toast.LENGTH_SHORT).show();;
                         ;
                         Intent intent = new Intent(PatientActivity.this, PatientWishActivity.class);
                         intent.putExtra("name",jsonO.getString("name"));

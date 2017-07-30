@@ -112,7 +112,7 @@ public class patientvolunteer extends AsyncTask<String, Void, String> {
                 session.setDefaults("data",json.toString(),context);
                 Log.e("JSON",s);
                 // context.startActivity(new Intent(context, DoctorActivity.class));
-                Notifier.createAlertDialog(context,Integer.toString(json1.length()),"test","Ok");
+//                Notifier.createAlertDialog(context,Integer.toString(json1.length()),"test","Ok");
                 for (int i = 0; i < json1.length(); i++) {
                     JSONObject jsonO = json1.getJSONObject(i);
                     //   Notifier.createAlertDialog(context,jsonO.getString("type"),"test","Ok");

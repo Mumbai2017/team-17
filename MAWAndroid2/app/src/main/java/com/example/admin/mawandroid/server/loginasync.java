@@ -101,7 +101,7 @@ public class loginasync extends AsyncTask<String,Void,String>{
         if(s==null){
             Notifier.createAlertDialog(context, "Please try again later", "Login error","ok");
         }else{
-            Notifier.createAlertDialog(context, s, "connection","Ok");
+//            Notifier.createAlertDialog(context, s, "connection","Ok");
             Log.e("Entered...","else");
             try {
                 Log.e("Before","json");

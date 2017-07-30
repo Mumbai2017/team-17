@@ -26,9 +26,9 @@ public class PatientGrantedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_granted);
 
-        Session session = Session.getInstance();
+       /* Session session = Session.getInstance();
         patientvolunteer pa = new patientvolunteer(this, this);
-        pa.execute(session.getDefaults("emailid",this));
+        pa.execute(session.getDefaults("emailid",this));*/
     }
 
 
