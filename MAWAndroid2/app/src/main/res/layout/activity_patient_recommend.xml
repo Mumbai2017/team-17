@@ -22,18 +22,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="hospital name"
+                android:layout_margin="5dp"
                 android:id="@+id/hospname"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="name"
+                android:layout_margin="5dp"
                 android:id="@+id/pname"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="email@gmail.com"
+                android:layout_margin="5dp"
                 android:inputType="textEmailAddress"
                 android:id="@+id/email"
                 />
@@ -43,6 +46,7 @@
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:id="@+id/gender">
 
             </Spinner>
@@ -53,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="dob dd-mm-yyyy"
+                android:layout_margin="5dp"
                 android:inputType="date"
                 android:id="@+id/dob"/>
 
@@ -60,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="mother tongoue"
+                android:layout_margin="5dp"
                 android:id="@+id/mtongue"/>
 
             v
@@ -67,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="parent name"
+                android:layout_margin="5dp"
                 android:id="@+id/parentname"/>
 
             <EditText
@@ -80,6 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Temp address (for treatment)"
+                android:layout_margin="5dp"
                 android:inputType="textMultiLine"
                 android:id="@+id/temp_address"/>
 
@@ -88,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Permanent address"
                 android:inputType="textMultiLine"
+                android:layout_margin="5dp"
                 android:id="@+id/perm_address"/>
 
 
@@ -100,6 +109,7 @@
                 android:id="@+id/rush_wish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:text="Rush Wish"/>
 
             <EditText
@@ -107,6 +117,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:hint="doctor notes"
+                android:layout_margin="5dp"
                 android:id="@+id/docNotes"/>
 
             <Button

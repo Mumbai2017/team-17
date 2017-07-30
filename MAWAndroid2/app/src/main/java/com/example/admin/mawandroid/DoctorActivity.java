@@ -111,8 +111,10 @@ public class DoctorActivity extends AppCompatActivity {
         switch (id){
             case R.id.vol1:
                 startActivity(new Intent(this, PatientActivity.class));
+                return true;
             case R.id.donor:
                 startActivity(new Intent(DoctorActivity.this, DonorActivity.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
